@@ -36,8 +36,7 @@ st.write('')
 # Step 1: Get relevant IDs
 @st.cache_resource(show_spinner='Laster inn annonser...')
 def get_ads(max_pages=5):
-    base_url = 'https://www.finn.no/realestate/homes/search.html?sort=PRICE_ASC&location=1.20061.20507&location=1.20061.20512&location=1.20061.20511&location=1.20061.20522&location=1.20061.20510&location=1.20061.20513&location=1.20061.20509&location=1.20061.20508&location=1.20061.20531&area_from=60&facilities=1&property_type=3&floor_navigator=NOTFIRST&price_collective_to=7500000&stored-id=78449579'
-
+    base_url = 'https://www.finn.no/realestate/homes/search.html?area_from=40&min_bedrooms=1&polylocation=10.60794+59.97457%2C10.78338+59.97942%2C10.82240+59.97137%2C10.81442+59.94284%2C10.78082+59.92675%2C10.75636+59.92658%2C10.73735+59.91528%2C10.67405+59.89237%2C10.61330+59.90113%2C10.58155+59.93271%2C10.60794+59.97457&price_collective_to=6000000&price_collective_from=4000000&stored-id=86155979&fbclid=IwY2xjawQwzdJleHRuA2FlbQIxMABicmlkETBySXlaTG55Zm1kZExuT2gyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHn3sh_bxGG33_7Y27S6KcSVKAwbC_dJ0-OZ28j2fP3tgrnmlXS0qk3R1qvtS_aem_lGTFL0jUjjMgJxO3uu7nEg'
     all_ids = []
     for page_number in range(1, max_pages + 1):
         url = f'{base_url}&page={page_number}'
